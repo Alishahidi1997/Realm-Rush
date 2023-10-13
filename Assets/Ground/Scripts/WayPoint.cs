@@ -5,11 +5,11 @@ using UnityEngine;
 public class WayPoint : MonoBehaviour
 {
     
-    [SerializeField] GameObject defender;
-    [SerializeField] GameObject towerSpawnAtRunTime;
-
-
     [SerializeField] bool isPlaceable;
+    [SerializeField] int towerCost = 50;
+
+    CreateTower towerCreation;
+    Bank accessToBank;
     public bool IsPlaceable
     {
         get
@@ -18,11 +18,16 @@ public class WayPoint : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        accessToBank = GameObject.FindGameObjectWithTag("Bank").GetComponent<Bank>();
+        towerCreation = GameObject.FindGameObjectWithTag("TowerDefensePool").GetComponent<CreateTower>(); 
+    }
     private void OnMouseDown()
     {
-        if (isPlaceable)
+        if (isPlaceable && accessToBank.CurrentBallance >= Mathf.Abs(towerCost))
         {
-            Instantiate(defender, transform.position, transform.rotation);
+            towerCreation.CreateTowerProcess(gameObject, towerCost); 
             isPlaceable = false; 
         }
     }

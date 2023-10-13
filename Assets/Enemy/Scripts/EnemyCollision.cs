@@ -5,10 +5,19 @@ using UnityEngine;
 public class EnemyCollision : MonoBehaviour
 {
     [SerializeField] int maxHitPoint = 5;
+    [SerializeField] int difficultyRamp = 1;  
     int currentHitPoint = 0;
-    private void Start()
+    int depositAmount = 25;  
+
+    Bank accessToBank; 
+    private void OnEnable()
     {
         currentHitPoint = maxHitPoint; 
+    }
+
+    void Start()
+    {
+        accessToBank = GameObject.FindGameObjectWithTag("Bank").GetComponent<Bank>(); 
     }
     void OnParticleCollision(GameObject other)
     {
@@ -17,9 +26,12 @@ public class EnemyCollision : MonoBehaviour
 
     private void ProcessHit()
     {
-        Debug.Log(currentHitPoint);
         currentHitPoint -= 1;
         if (currentHitPoint <= 0)
-            Destroy(this.gameObject);
+        {
+            accessToBank.Deposit(depositAmount);
+            maxHitPoint += difficultyRamp;
+            this.gameObject.active = false;
+        }
     }
 }

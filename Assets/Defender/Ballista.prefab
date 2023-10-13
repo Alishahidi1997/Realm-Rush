@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25100f9735e5bfb4993395ff8ce84b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towersRange: 15
+  bow: {fileID: 1891629702431979200}
   weapon: {fileID: 3144582324300694500}
 --- !u!1 &5281724281384333576
 GameObject:
