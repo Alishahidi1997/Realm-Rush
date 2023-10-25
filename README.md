@@ -26,4 +26,6 @@ As you progress through the game, enemy units become faster and tougher, intensi
 
 "Realm Rush" is more than just a game; it's a test of your strategic thinking and resource management abilities. Your kingdom relies on your tactical expertise to defend the castle gates, keeping the enemy at bay and considering arrow range for each tower. Can you rise to the challenge, outsmart your foes, and emerge as a victorious castle defender?
 
+## Demo 
+Will be added soon. 
 [Play Realm Rush](#) | [Report Issues](#)
