@@ -28,4 +28,4 @@ As you progress through the game, enemy units become faster and tougher, intensi
 
 ## Demo 
 Will be added soon. 
-[Play Realm Rush](#) | [Report Issues](#)
+
