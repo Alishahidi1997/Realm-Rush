@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 
 //[ExecuteAlways]
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler : MonoBehaviour
 {
     TextMeshPro label;
@@ -42,6 +43,7 @@ public class CoordinateLabeler : MonoBehaviour
 
     void HideDisplayLabels()
     {
+
         label.enabled = !label.enabled;
     }
     void DisplayCoordinates()

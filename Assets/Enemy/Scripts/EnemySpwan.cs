@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemySpwan : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
-    [SerializeField] float spawnTimer = 1f;
-    [SerializeField] int poolSize = 5;
+    [SerializeField] [Range(0.1f, 10)] float spawnTimer = 1f;
+    [SerializeField] [Range(1,15)] int poolSize = 5;
 
     GameObject[] pool;
 
